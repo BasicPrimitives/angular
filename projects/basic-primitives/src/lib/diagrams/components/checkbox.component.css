@@ -1,0 +1,22 @@
+.checkbox-div {
+  text-align: left;
+}
+
+.checkbox-input {
+  font-size: 12px;
+  line-height: 12px;
+  vertical-align: middle;
+  margin: 0px;
+  padding: 0px;
+}
+
+.checkbox-span {
+  font-size: 12px;
+  line-height: 12px;
+  vertical-align: middle;
+  margin: 0px;
+  padding-left: 2px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
