@@ -1,7 +1,7 @@
 
 
-# The future home of the Basic Primitives for Angular 13 
-Basic Primitives Diagrams for Angular. Data visualization components library that implements organizational chart and multi-parent dependency diagrams.
+# [Basic Primitives](https://www.basicprimitives.com) Diagrams for Angular
+Data visualization diagramming components library for dependencies visualization and analysis that implements organizational chart, family chart, inheritance, dependency trees, and business ownership diagrams provides a reach feature set for automatic layout customization and visual node annotation.
 
 ## Library Build
 
