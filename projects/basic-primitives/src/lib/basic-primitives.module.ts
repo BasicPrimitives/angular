@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrgDiagramComponent } from './diagrams/org-diagram.component';
+import { FamDiagramComponent } from './diagrams/fam-diagram.component';
 import { RotatedText } from './diagrams/rotated-text.component';
 import { ItemComponent } from './diagrams/components/item.component';
 import { HighlightComponent } from './diagrams/components/highlight.component';
@@ -14,10 +15,12 @@ import { LevelTitleComponent } from './diagrams/components/level-title.component
 
 
 
+
 @NgModule({
   declarations: [
     BaseDiagramComponent,
     OrgDiagramComponent,
+    FamDiagramComponent,
     RotatedText,
     ItemComponent,
     CursorComponent,
@@ -33,6 +36,7 @@ import { LevelTitleComponent } from './diagrams/components/level-title.component
   ],
   exports: [
     OrgDiagramComponent,
+    FamDiagramComponent,
     RotatedText
   ]
 })

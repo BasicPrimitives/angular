@@ -38,6 +38,8 @@
     class="scroll-panel"
     [ngStyle]="scrollPanelStyle"
     (scroll)="onScroll($event)"
+    [scrollLeft]="placeholderOffset ? placeholderOffset.x : undefined"
+    [scrollTop]="placeholderOffset ? placeholderOffset.y : undefined"
   >
     <div #mousePanelRef
       class="mouse-panel"

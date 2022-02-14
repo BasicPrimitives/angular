@@ -3,6 +3,7 @@
  */
 
 export * from './lib/diagrams/org-diagram.component';
+export * from './lib/diagrams/fam-diagram.component';
 export * from './lib/diagrams/rotated-text.component';
 export * from './lib/basic-primitives.service';
 export * from './lib/basic-primitives.module';

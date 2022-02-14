@@ -1,51 +1,46 @@
 import { Component, ElementRef, EventEmitter, Input, NgZone, Output, SimpleChanges } from '@angular/core';
-import { OrgConfig } from '../configs/org-config';
+import { FamConfig } from '../configs/fam-config';
 import { BaseDiagramComponent } from './base-diagram.component';
 import { TaskManagerFactory } from './task-manager-factory';
-import { OrgEventArgs, SelectionEventArgs } from '../events/';
+import { FamEventArgs, SelectionEventArgs } from '../events/';
 // @ts-ignore
-import { OrgTaskManagerFactory } from 'basicprimitives';
+import { FamTaskManagerFactory } from 'basicprimitives';
+
 
 @Component({
-  selector: 'org-diagram',
+  selector: 'fam-diagram',
   templateUrl: './base-diagram.component.html',
   styleUrls: ['./base-diagram.component.css']
 })
-export class OrgDiagramComponent extends BaseDiagramComponent {
-  @Input() config: OrgConfig = new OrgConfig();
+export class FamDiagramComponent extends BaseDiagramComponent {
+  @Input() config: FamConfig = new FamConfig();
 
-  @Output() onHighlightChanging = new EventEmitter<OrgEventArgs>(false);
-  @Output() onHighlightChanged = new EventEmitter<OrgEventArgs>();
-  @Output() onCursorChanging = new EventEmitter<OrgEventArgs>(false);
-  @Output() onCursorChanged = new EventEmitter<OrgEventArgs>();
+  @Output() onHighlightChanging = new EventEmitter<FamEventArgs>(false);
+  @Output() onHighlightChanged = new EventEmitter<FamEventArgs>();
+  @Output() onCursorChanging = new EventEmitter<FamEventArgs>(false);
+  @Output() onCursorChanged = new EventEmitter<FamEventArgs>();
   @Output() onSelectionChanging = new EventEmitter<SelectionEventArgs>(false);
   @Output() onSelectionChanged = new EventEmitter<SelectionEventArgs>();
 
-
   constructor(host: ElementRef, zone: NgZone) {
-    super(host, zone, new TaskManagerFactory(OrgTaskManagerFactory))
+    super(host, zone, new TaskManagerFactory(FamTaskManagerFactory))
   }
 
   ngOnChanges(changes: SimpleChanges) {
     const { config, centerOnCursor } = changes;
-    var newState = {...this.state};
-    if(centerOnCursor) {
-      newState.centerOnCursor = centerOnCursor.currentValue;
+    const { highlightItem, cursorItem, selectedItems } = config.currentValue;
+    this.state = {
+      ...this.state,
+      config: this.config,
+      highlightItem,
+      cursorItem,
+      selectedItems: (selectedItems || []).slice(),
+      centerOnCursor: centerOnCursor.currentValue
     }
-    if(config) {
-      const { highlightItem, cursorItem, selectedItems } = config.currentValue;
-      newState.config = this.config;
-      newState.highlightItem = highlightItem;
-      newState.cursorItem = cursorItem;
-      newState.selectedItems =  (selectedItems || []).slice();
-    }
-    
-    this.state = newState;
-    this.render();
   }
 
-  override _onHighlightChanging (event: Event, itemId: number | string | null, newItemId: number | string | null): OrgEventArgs {
-    var newEvent = new OrgEventArgs(
+  override _onHighlightChanging (event: Event, itemId: number | string | null, newItemId: number | string | null): FamEventArgs {
+    var newEvent = new FamEventArgs(
       {
         ...(this.getEventArgs(itemId, newItemId)),
         event
@@ -59,8 +54,8 @@ export class OrgDiagramComponent extends BaseDiagramComponent {
     this.onHighlightChanged.emit(eventArgs);
   };
 
-  override _onCursorChanging (event: Event, itemId: number | string | null, newItemId: number | string | null): OrgEventArgs { 
-    var newEvent = new OrgEventArgs(
+  override _onCursorChanging (event: Event, itemId: number | string | null, newItemId: number | string | null): FamEventArgs { 
+    var newEvent = new FamEventArgs(
       {
         ...(this.getEventArgs(itemId, newItemId)),
         event

@@ -1,9 +1,6 @@
 export class TaskManagerFactory {
     factory: any | null;
-    eventArgs: any | null;
-
-    constructor(factory: any, eventArgs: any) {
+    constructor(factory: any) {
         this.factory = factory;
-        this.eventArgs = eventArgs;
     }
 }

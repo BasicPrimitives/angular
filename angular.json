@@ -58,6 +58,7 @@
               "projects/samples/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/samples/src/styles.css"
             ],
             "scripts": []
@@ -125,6 +126,7 @@
               "projects/samples/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/samples/src/styles.css"
             ],
             "scripts": []

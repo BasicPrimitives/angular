@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { OrientationType } from '../enums';
 import { Rect, Size, Point } from '../structs';
-import { Layer, Placeholder, Graphics } from './graphics';
+import { Placeholder, Graphics } from './graphics';
 // @ts-ignore
 import { getFixOfPixelAlignment, getInnerSize, getElementOffset} from 'basicprimitives';
 import { TaskManagerFactory } from './task-manager-factory';
@@ -58,10 +58,10 @@ class BaseDiagramState {
 export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
  
   ngAfterViewInit(): void {
-    this.observer = new ResizeObserver(this.onSizeChanged.bind(this));
+    var onSizeChanged =  this.onSizeChanged.bind(this);
+    this.observer = new ResizeObserver(() => this.zone.run(() => onSizeChanged()));
     this.observer.observe(this.controlPanelRef!.nativeElement);
 
-    this.centerCursor();
     this.fixPixelAlignment();
   }
 
@@ -75,15 +75,14 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('calloutPlaceholderRef') calloutPlaceholderRef: ElementRef<HTMLDivElement> | undefined;
   @ViewChild('controlPanelRef') controlPanelRef: ElementRef<HTMLDivElement> | undefined;
   
-
-  @Input() onHighlightChanging: ((event: Event, eventArgs: any) => boolean) | null= null;
-  @Input() onHighlightChanged: ((event: Event, eventArgs: any) => void) | null= null;
-  @Input() onCursorChanging: ((event: Event, eventArgs: any) => boolean) | null= null;
-  @Input() onCursorChanged: ((event: Event, eventArgs: any) => void) | null= null;
-  @Input() onSelectionChanging: ((event: Event, selectedItems: Array<string|number>, newSelectedItems: Array<string|number>) => boolean) | null= null;
-  @Input() onSelectionChanged: ((event: Event, selectedItems: Array<string|number>, newSelectedItems: Array<string|number>) => void) | null= null;
-
   @Input() centerOnCursor: Boolean = true;
+
+  _onHighlightChanging (event: Event, itemId: number | string | null, newItemId: number | string | null): any {};
+  _onHighlightChanged (eventArgs: any) {};
+  _onCursorChanging (event: Event, itemId: number | string | null, newItemId: number | string | null): any {};
+  _onCursorChanged (eventArgs: any) {};
+  _onSelectionChanging (event: Event, selectedItems: Array<string|number>, newSelectedItems: Array<string|number>): any {};
+  _onSelectionChanged (eventArgs: any) {};
 
   private taskManagerFactory: TaskManagerFactory;
   private tasks: any;
@@ -93,7 +92,7 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
   private timer: any | null = null;
   private observer: any;
 
-  constructor(taskManagerFactory: TaskManagerFactory) { 
+  constructor(private host: ElementRef, private zone: NgZone, taskManagerFactory: TaskManagerFactory) { 
     this.taskManagerFactory = taskManagerFactory;
     this.graphics = new Graphics(new Size(0,0));
 
@@ -164,9 +163,9 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
       onCursorRender: this.onCursorRender.bind(this),
       onHighlightRender: this.onHighlightRender.bind(this),
       onGroupTitleRender: !config.groupTitleTemplate ? null : () => config.groupTitleTemplate,
-      onLevelBackgroundRender: !config.onLevelBackgroundRender ? null : () => config.levelBackgroundTemplate,
-      onLevelTitleRender: !config.onLevelTitleRender ? null : () => config.levelTitleTemplate,
-      onButtonsRender: !config.onButtonsRender ? null : () => config.buttonsTemplate
+      onLevelBackgroundRender: !config.levelBackgroundTemplate ? null : () => config.levelBackgroundTemplate,
+      onLevelTitleRender: !config.levelTitleTemplate ? null : () => config.levelTitleTemplate,
+      onButtonsRender: !config.buttonsTemplate ? null : () => config.buttonsTemplate
     };
   }
 
@@ -211,18 +210,6 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
       mousePanelSize: new Size(mousePanelSize.width, mousePanelSize.height),
       placeholderSize: new Size(placeholderSize.width, placeholderSize.height)
     });
-  }
-
-  centerCursor() {
-    const { centerOnCursor } = this.state;
-    if (centerOnCursor) {
-      /* scroll to offset */
-      const centerOnCursorTask = this.tasks.getTask("CenterOnCursorTask");
-      const placeholderOffset = centerOnCursorTask.getPlaceholderOffset();
-      const { x: scrollLeft, y: scrollTop } = placeholderOffset;
-      this.scrollPanelRef!.nativeElement.scrollLeft = scrollLeft;
-      this.scrollPanelRef!.nativeElement.scrollTop = scrollTop;
-    }
   }
 
   fixPixelAlignment() {
@@ -299,7 +286,7 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   getEventArgs(oldTreeItemId: string | number | null, newTreeItemId: string | number | null, name: string | null = null) {
-    var result = new this.taskManagerFactory.eventArgs(),
+    var result: any = {},
       combinedContextsTask = this.tasks.getTask("CombinedContextsTask"),
       alignDiagramTask = this.tasks.getTask("AlignDiagramTask"),
       oldItemConfig = combinedContextsTask.getConfig(oldTreeItemId),
@@ -338,24 +325,12 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
     let eventArgs, cancel = false;
     const { highlightItem } = this.state;
     if (newHighlightItemId !== highlightItem) {
-      eventArgs = this.getEventArgs(highlightItem, newHighlightItemId);
-
-      if (this.onHighlightChanging) {
-        if (this.onHighlightChanging(event, eventArgs)) {
-          cancel = true;
-          this.setState({
-            highlightItem: newHighlightItemId
-          });
-        }
-      } else {
+      eventArgs = this._onHighlightChanging(event, highlightItem, newHighlightItemId);
+      if (!eventArgs.cancel) {
         this.setState({
           highlightItem: newHighlightItemId
         });
-      };
-      if (!cancel) {
-        if (this.onHighlightChanged != null) {
-          this.onHighlightChanged(event, eventArgs);
-        }
+        this._onHighlightChanged(eventArgs);
       }
     }
   }
@@ -364,28 +339,13 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
     let eventArgs, cancel = false;
     const { cursorItem } = this.state;
     if (newCursorItemId !== cursorItem) {
-      eventArgs = this.getEventArgs(cursorItem, newCursorItemId);
-
-      if (this.onCursorChanging != null) {
-        if (this.onCursorChanging(event, eventArgs)) {
-          cancel = true;
-          this.setState({
-            cursorItem: newCursorItemId,
-            centerOnCursor: true
-          });
-        }
-      } else {
+      eventArgs = this._onCursorChanging(event, cursorItem, newCursorItemId);
+      if (!eventArgs.cancel) {
         this.setState({
           cursorItem: newCursorItemId,
           centerOnCursor: true
         });
-      }
-
-
-      if (!cancel) {
-        if(this.onCursorChanged) {
-          this.onCursorChanged(event, eventArgs);
-        }
+        this._onCursorChanged(eventArgs);
       }
     }
   }
@@ -427,17 +387,12 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
         // eslint-disable-next-line
         newSelectedItems = selectedItems.filter(id => id != itemId); // User type may not mach string value in data attribute
       }
-      if (this.onSelectionChanging) {
-        cancel = this.onSelectionChanging(event, selectedItems, newSelectedItems)
-      }
-      if (!cancel) {
+      var eventArgs = this._onSelectionChanging(event, selectedItems, newSelectedItems);
+      if (!eventArgs.cancel) {
         this.setState({
           selectedItems: newSelectedItems
         })
-
-        if (this.onSelectionChanged) {
-          this.onSelectionChanged(event, selectedItems, newSelectedItems);
-        }
+        this._onSelectionChanged(eventArgs);
       }
     }
   }
@@ -609,6 +564,12 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
         top: calloutPlaceholder.rect.y + "px"
       };
     }
+
+    const { centerOnCursor } = this.state;
+    if (centerOnCursor) {
+      const centerOnCursorTask = this.tasks.getTask("CenterOnCursorTask");
+      this.placeholderOffset = centerOnCursorTask.getPlaceholderOffset();
+    }
   }
 
   /* Component template properties */
@@ -624,6 +585,7 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
   titlesMousePanelStyle: Record<string, string | undefined | null> = {};
   titlesPlaceholderStyle: Record<string, string | undefined | null> = {};
   scrollPanelStyle: Record<string, string | undefined | null> = {};
+  placeholderOffset: Point | undefined = undefined;
   mousePanelStyle: Record<string, string | undefined | null> = {};
   placeholderStyle: Record<string, string | undefined | null> = {};
   calloutPlaceholderStyle: Record<string, string | undefined | null> = {};

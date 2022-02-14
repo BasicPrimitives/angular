@@ -7,6 +7,7 @@ export class OrgEventArgs {
     position : Rect | null = null;
     name : string | null = null;
     cancel : boolean = false;
+    event: Event | undefined;
 
     constructor(config: Partial<OrgEventArgs> = {}) {
         Object.assign(this, config);

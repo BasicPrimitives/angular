@@ -1,0 +1,14 @@
+<h1>Selecting Cursor Item</h1>
+<p>
+    <span>Set cursor to: &nbsp;</span>
+    <button mat-raised-button (click)="update(0)">James Smith</button>&nbsp;
+    <button mat-raised-button (click)="update(1)">Ted Lucas</button>&nbsp;
+    <button mat-raised-button (click)="update(2)">Fritz Stuger</button>&nbsp;
+    <button mat-raised-button (click)="update(null)">Unselect</button>
+<p>
+<ng-container *ngIf="title">
+  <p><span>User set cursor to:</span>&nbsp;{{title}}</p>
+</ng-container>
+<div class="sample">
+    <org-diagram [config]="config" [centerOnCursor]="true" (onCursorChanged)="onCursorChanged($event)"></org-diagram>
+</div>

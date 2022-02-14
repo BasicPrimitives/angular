@@ -10,7 +10,9 @@ export default class AbstractTemplate {
     return "";
   }
   
-  render: (() => TemplateRef<any>) | null = null; 
+  render(data: any): TemplateRef<any> | null {
+    return null;
+  }; 
 
   constructor(templateName: string, options: Object) {
     this.options = {

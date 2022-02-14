@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { OrgConfig, OrgItemConfig, Enabled, PageFitMode } from 'basic-primitives';
 
 @Component({
-  selector: 'app-first-organizational-chart',
-  templateUrl: './first-organizational-chart.component.html',
-  styleUrls: ['./first-organizational-chart.component.css']
+  selector: 'app-selecting-highlight-item',
+  templateUrl: './selecting-highlight-item.component.html',
+  styleUrls: ['./sample.css']
 })
-export class FirstOrganizationalChartComponent {
+export class SelectingHighlightItemComponent {
+  title: String | undefined;
 
   config: OrgConfig = new OrgConfig({
     pageFitMode: PageFitMode.FitToPage,
@@ -37,4 +38,19 @@ export class FirstOrganizationalChartComponent {
       })
     ]
   });
+
+
+  onHighlightChanged(event: any) {
+    const { context: item } = event;
+    if (item) {
+      this.title = item.title + " ";
+    }
+  };
+
+  update(itemId: number | null = null) {
+    this.config = {
+        ...this.config,
+        highlightItem: itemId
+    };
+  }
 }

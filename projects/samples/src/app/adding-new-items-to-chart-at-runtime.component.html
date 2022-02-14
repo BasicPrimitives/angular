@@ -1,0 +1,12 @@
+<h1>Adding new items to chart at runtime</h1>
+<div class="sample">
+    <org-diagram [config]="config" [centerOnCursor]="true"></org-diagram>
+</div>
+<ng-template #buttonsTemplate let-itemConfig="context">
+    <button mat-icon-button aria-label="Add node" (click)="onAddButtonClick(itemConfig)">
+        <mat-icon>person_add_alt_1</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Remove node" (click)="onRemoveButtonClick(itemConfig)">
+        <mat-icon>person_off</mat-icon>
+    </button>
+</ng-template>
