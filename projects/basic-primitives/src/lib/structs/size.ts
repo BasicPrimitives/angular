@@ -7,11 +7,15 @@ export class Size {
         this.height = height;
     }
 
-    getCSS(units: string = "px") {
+    getCSS?(units: string = "px") {
         var result = {
             width: this.width + units,
             height: this.height + units
         };
         return result;
+    };
+
+    space?() {
+        return this.width * this.height;
     };
 }

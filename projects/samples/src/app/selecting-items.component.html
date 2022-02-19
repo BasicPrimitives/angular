@@ -1,0 +1,28 @@
+<style>
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+</style>
+<h1>Selected items & Check boxes</h1>
+<p>
+    <span>Select following items: &nbsp;</span>
+    <section>
+      <ul>
+        <li *ngFor="let item of checkBoxes">
+          <mat-checkbox  (change)="update($event)" [value]="item.id.toString()" [checked]="item.isChecked">{{item.name}}</mat-checkbox>
+        </li>
+      </ul>
+    </section>
+<p>
+<div class="sample">
+    <org-diagram 
+      [items]="items" 
+      [selectedItems]="selectedItems"
+      [cursorItem]="0"
+      [pageFitMode]=PageFitMode.FitToPage
+      [hasSelectorCheckbox]=Enabled.True
+      [centerOnCursor]=true
+      (onSelectionChanged)="onSelectionChanged($event)">
+    </org-diagram>
+</div>

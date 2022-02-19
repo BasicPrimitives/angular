@@ -1,0 +1,33 @@
+<style>
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+</style>
+<h1>Auto size diagram in article</h1>
+<div class="sample">
+    <p>
+        <label id="auto-size-minimum-label">Minimum Auto Size:&nbsp;</label>
+        <mat-radio-group aria-labelledby="auto-size-minimum-label" (change)="setMinimumSize($event)">
+            <mat-radio-button class="example-radio-button" *ngFor="let sizeKey of sizeKeys" [value]="sizeKey" [checked]="sizeKey == autoSizeMinimumKey">
+                {{sizeKey}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </p>
+    <p>
+        <label id="auto-size-maximum-label">Maximum Auto Size:&nbsp;</label>
+        <mat-radio-group aria-labelledby="auto-size-maximum-label" (change)="setMaximumSize($event)">
+            <mat-radio-button class="example-radio-button" *ngFor="let sizeKey of sizeKeys" [value]="sizeKey" [checked]="sizeKey == autoSizeMaximumKey">
+                {{sizeKey}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </p>    
+    <org-diagram
+        [items]="items"
+        [autoSizeMinimum]="autoSizeMinimum"
+        [autoSizeMaximum]="autoSizeMaximum"
+        [pageFitMode]=PageFitMode.AutoSize
+        [hasSelectorCheckbox]=Enabled.True
+        [cursorItem]="0"
+        [centerOnCursor]=true>
+    </org-diagram>
+</div>

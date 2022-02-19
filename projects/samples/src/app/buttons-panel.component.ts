@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { OrgItemConfig, Enabled, PageFitMode } from 'basic-primitives';
 
 @Component({
-  selector: 'app-selecting-cursor-item',
-  templateUrl: './selecting-cursor-item.component.html',
+  selector: 'app-buttons-panel',
+  templateUrl: './buttons-panel.component.html',
   styleUrls: ['./sample.css']
 })
-export class SelectingCursorItemComponent {
+export class ButtonsPanelComponent {
   PageFitMode = PageFitMode;
   Enabled = Enabled;
 
-  title: String | undefined;
-  cursorItem: number | null = 0;
+
+  cursorItem: string | number | null = 0;
   items = [
     new OrgItemConfig({
       id: 0,
@@ -33,17 +33,25 @@ export class SelectingCursorItemComponent {
       title: 'Fritz Stuger',
       description: 'Business Solutions, US',
       image: '/assets/photos/c.png'
+    }),
+    new OrgItemConfig({
+      id: 3,
+      parent: 0,
+      title: "Lynne Rathinam",
+      description: "GM, Enterprise Services",
+      image: "/assets/photos/d.png"
     })
   ];
+  
+  index: number = 4;
 
-  onCursorChanged(event: any) {
-    const { context: item } = event;
-    if (item) {
-      this.title = item.title + " ";
-    }
-  };
+  onAddButtonClick(event: Event, itemConfig: OrgItemConfig) {
+    event.stopPropagation();
+    alert(`User clicked on Coffee button for node ${itemConfig.title}`)
+  }
 
-  update(itemId: number | null = null) {
-    this.cursorItem = itemId;
+  onRemoveButtonClick(event: Event, itemConfig: OrgItemConfig) {
+    event.stopPropagation();
+    alert(`User clicked on Tree button for node ${itemConfig.title}`)
   }
 }

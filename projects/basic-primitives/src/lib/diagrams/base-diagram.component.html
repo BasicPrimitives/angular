@@ -89,7 +89,7 @@
         <path *ngFor="let path of layer.polylines" [attr.d]="path.data" [ngStyle]="path.style"></path>
       </svg>
       <div *ngFor="let item of layer.items;" class="template" [ngStyle]="item.style">
-        <ng-container [ngSwitch]="item.name">
+        <ng-container [ngSwitch]="item.templateType">
           <ng-container *ngSwitchCase="'itemTemplate'">
             <bp-item [itemConfig]="item.context.context" [itemTitleFirstFontColor]="item.context.itemTitleFirstFontColor" [itemTitleSecondFontColor]="item.context.itemTitleSecondFontColor"></bp-item>
           </ng-container>

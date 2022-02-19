@@ -10,5 +10,12 @@
   <p><span>User set highlight to:</span>&nbsp;{{title}}</p>
 </ng-container>
 <div class="sample">
-    <org-diagram [config]="config" [centerOnCursor]="true" (onHighlightChanged)="onHighlightChanged($event)"></org-diagram>
+    <org-diagram 
+      [items]="items" 
+      [highlightItem]="highlightItem"
+      [pageFitMode]=PageFitMode.FitToPage
+      [hasSelectorCheckbox]=Enabled.True
+      [centerOnCursor]=true
+      (onHighlightChanged)="onHighlightChanged($event)">
+    </org-diagram>
 </div>

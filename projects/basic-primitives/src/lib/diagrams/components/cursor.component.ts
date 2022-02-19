@@ -12,8 +12,8 @@ export class CursorComponent implements OnChanges {
 
     ngOnChanges(changes: SimpleChanges): void {
       const { cursorPadding, itemSize, cursorBorderWidth } = this.templateConfig;
-      this.width = (itemSize.width + cursorPadding.left + cursorPadding.right) + "px",
-      this.height = (itemSize.height + cursorPadding.top + cursorPadding.bottom) + "px",
+      this.width = (itemSize!.width + cursorPadding!.left + cursorPadding!.right) + "px",
+      this.height = (itemSize!.height + cursorPadding!.top + cursorPadding!.bottom) + "px",
       this.borderWidth = cursorBorderWidth + "px";
     }
 

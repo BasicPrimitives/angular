@@ -14,7 +14,9 @@ const TREE_DATA: SampleNode[] = [
     children: [
       { name: 'First Organizational Chart', path: 'firstorganizationalchart'}, 
       { name: 'First Family Chart', path: 'firstfamilychart'}, 
-      { name: 'Adding New Items To Chart at Runtime', path: 'addingnewitemstochartatruntime'}
+      { name: 'Adding New Items To Chart at Runtime', path: 'addingnewitemstochartatruntime'},
+      { name: 'Page Size Organizational Chart', path: 'pagesizeorganizationalchart'},
+      { name: 'Auto size diagram in article', path: 'autosize'}
     ],
   },
   {
@@ -22,8 +24,17 @@ const TREE_DATA: SampleNode[] = [
     children: [
       { name: 'Selecting Cursor Item', path: 'selectingcursoritem' },
       { name: 'Selecting Highlight Item', path: 'selectinghighlightitem' },
+      { name: 'Selected items & Check boxes', path: 'selectingitems' },
+      { name: 'Show Frame', path: 'showframe' },
+      { name: 'Buttons Panel', path: 'buttonspanel' }
     ],
   },
+  {
+    name: 'Item Template Use Cases',
+    children: [
+      { name: 'Item template', path: 'itemtemplate' }
+    ],
+  }
 ];
 
 interface SampleFlatNode {

@@ -14,10 +14,10 @@ export default class AbstractTemplate {
     return null;
   }; 
 
-  constructor(templateName: string, options: Object) {
+  constructor(templateType: string, options: Object) {
     this.options = {
       ...options,
-      templateName
+      templateType
     }
   }
 };

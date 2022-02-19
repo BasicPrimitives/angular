@@ -261,7 +261,7 @@ export class Graphics {
     if (onRenderTemplate !== null) {
       templateRef = onRenderTemplate(context);
     };
-    this.activePlaceholder.activeLayer.items.push(new Template(options.templateName, templateRef, context, style));
+    this.activePlaceholder.activeLayer.items.push(new Template(options.templateType, options.templateName, templateRef, context, style));
   };
 
   getPxSize(value: any, base: number) {

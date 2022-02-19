@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, ElementRef, Input, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { OrientationType } from '../enums';
-import { Rect, Size, Point } from '../structs';
 import { Placeholder, Graphics } from './graphics';
+import { Rect, Size, Point } from '../structs';
 // @ts-ignore
-import { getFixOfPixelAlignment, getInnerSize, getElementOffset} from 'basicprimitives';
+import { getFixOfPixelAlignment, getInnerSize, getElementOffset } from 'basicprimitives';
 import { TaskManagerFactory } from './task-manager-factory';
 import {
   AnnotationLabelTemplate,
@@ -43,8 +43,8 @@ class LayoutOptions {
 
 class BaseDiagramState {
   config: any;
-  viewportSize: Size = new Size();
-  contentPosition: Point = new Point();
+  viewportSize: Size = new Size(0, 0);
+  contentPosition: Point = new Point(0, 0);
   centerOnCursor: boolean = true;
   highlightItem: number | string | null = null;
   cursorItem: number | string | null = null;
@@ -75,7 +75,7 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('calloutPlaceholderRef') calloutPlaceholderRef: ElementRef<HTMLDivElement> | undefined;
   @ViewChild('controlPanelRef') controlPanelRef: ElementRef<HTMLDivElement> | undefined;
   
-  @Input() centerOnCursor: Boolean = true;
+  @Input() centerOnCursor: boolean = true;
 
   _onHighlightChanging (event: Event, itemId: number | string | null, newItemId: number | string | null): any {};
   _onHighlightChanged (eventArgs: any) {};
@@ -174,7 +174,10 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   getLayout() {
-    var { centerOnCursor, viewportSize, contentPosition } = this.state;
+    var centerOnCursor = this.state.centerOnCursor;
+    var viewportSize = this.state.viewportSize;
+    var contentPosition = this.state.contentPosition;
+    // var { centerOnCursor, viewportSize, contentPosition } = this.state;
     return {
       forceCenterOnCursor: centerOnCursor,
       scrollPanelSize: new Size(viewportSize.width, viewportSize.height),
@@ -511,7 +514,7 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
 
     var scaleText = "scale(" + scale + "," + scale + ")";
 
-    this.controlPanelStyle = autoSize ? controlSize.getCSS() : {};
+    this.controlPanelStyle = autoSize ? controlSize.getCSS!() : {};
     this.frameMousePanelStyle = frameMousePanelRect.getCSS();
 
     if(framePlaceholder) {
@@ -547,7 +550,7 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
     };
 
     this.mousePanelStyle = {
-      ...(mousePanelSize.getCSS())
+      ...(mousePanelSize.getCSS!())
     };
 
     this.placeholderStyle = {
