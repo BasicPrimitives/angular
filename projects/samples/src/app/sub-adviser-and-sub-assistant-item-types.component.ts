@@ -16,7 +16,7 @@ export class SubAdviserAndSubAssistantItemTypesComponent {
       parent: null,
       title: "James Smith",
       description: "Parent Item",
-      image: "/assets/photos/a.png"
+      image: "./assets/photos/a.png"
     }),
     new OrgItemConfig({
       id: 1,
@@ -26,7 +26,7 @@ export class SubAdviserAndSubAssistantItemTypesComponent {
       title: "Robert Canon",
       description: "Sub Adviser item",
       groupTitle: "SubAdviser",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 2,
@@ -36,7 +36,7 @@ export class SubAdviserAndSubAssistantItemTypesComponent {
       title: "Ted Lucas",
       description: "Sub Assitant Item",
       groupTitle: "SubAssistant",
-      image: "/assets/photos/c.png"
+      image: "./assets/photos/c.png"
     }),
     new OrgItemConfig({
       id: 3,
@@ -44,7 +44,7 @@ export class SubAdviserAndSubAssistantItemTypesComponent {
       title: "Fritz Stuger",
       description: "Regular Item",
       groupTitle: "Regular",
-      image: "/assets/photos/d.png"
+      image: "./assets/photos/d.png"
     })
   ];
 }

@@ -46,7 +46,7 @@ export class ShowFrameComponent {
       parent: null,
       title: "Title 0",
       description: "Description",
-      image: "/assets/photos/a.png",
+      image: "./assets/photos/a.png",
       minimizedItemShapeType: (this.getNextShapeType()),
       itemTitleColor: (this.getNextColor())
     });
@@ -63,7 +63,7 @@ export class ShowFrameComponent {
             parent: parent.id,
             title: id.toString() + " Title",
             description: id.toString() + " Description",
-            image: "/assets/photos/b.png",
+            image: "./assets/photos/b.png",
             minimizedItemShapeType: (this.getNextShapeType()),
             itemTitleColor: (this.getNextColor())
           });

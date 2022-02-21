@@ -16,7 +16,7 @@ export class CursorTemplateComponent {
       parent: null,
       title: "James Smith",
       description: "VP, Public Sector",
-      image: "/assets/photos/a.png",
+      image: "./assets/photos/a.png",
       context: { phone: "(123) 456-78-90", email: "itema@org.com", icon: "bookmark", color: "primary" },
       templateName: "contactTemplate",
       itemTitleColor: "red"
@@ -27,7 +27,7 @@ export class CursorTemplateComponent {
       title: "Ted Lucas",
       description: "VP, Human Resources",
       context: { phone: "(123) 456-78-90", email: "itema@org.com", icon: "delete", color: "warn" },
-      image: "/assets/photos/b.png",
+      image: "./assets/photos/b.png",
       templateName: "contactTemplate"
     }),
     new OrgItemConfig({
@@ -36,7 +36,7 @@ export class CursorTemplateComponent {
       title: "Fritz Stuger",
       context: { phone: "(123) 654-78-90", email: "itemc@org.com", icon: "home", color: "accent" },
       description: "Business Solutions, US",
-      image: "/assets/photos/c.png",
+      image: "./assets/photos/c.png",
       templateName: "contactTemplate"
     })
   ];

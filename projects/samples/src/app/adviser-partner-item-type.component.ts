@@ -17,14 +17,14 @@ export class AdviserPartnerItemTypeComponent {
       parent: null,
       title: "James Smith",
       description: "VP, Public Sector",
-      image: "/assets/photos/a.png"
+      image: "./assets/photos/a.png"
     }),
     new OrgItemConfig({
       id: 1,
       parent: 0,
       title: "Robert Canon",
       description: "Adviser Partner",
-      image: "/assets/photos/z.png",
+      image: "./assets/photos/z.png",
       itemType: ItemType.AdviserPartner,
       adviserPlacementType: AdviserPlacementType.Right,
       groupTitle: "Partner"
@@ -34,7 +34,7 @@ export class AdviserPartnerItemTypeComponent {
       parent: 0,
       title: "Fritz Stuger",
       description: "Adviser Partner item",
-      image: "/assets/photos/y.png",
+      image: "./assets/photos/y.png",
       itemType: ItemType.AdviserPartner,
       adviserPlacementType: AdviserPlacementType.Left,
       groupTitle: "Partner"
@@ -44,14 +44,14 @@ export class AdviserPartnerItemTypeComponent {
       parent: 0,
       title: "Ted Lucas",
       description: "VP, Human Resources",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 4,
       parent: 3,
       title: "Robert Canon 2",
       description: "Adviser Partner item",
-      image: "/assets/photos/z.png",
+      image: "./assets/photos/z.png",
       itemType: ItemType.AdviserPartner,
       adviserPlacementType: AdviserPlacementType.Right,
       groupTitle: "Partner"
@@ -61,7 +61,7 @@ export class AdviserPartnerItemTypeComponent {
       parent: 3,
       title: "Ted Lucas 2",
       description: "VP, Human Resources",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     })
   ]
 }

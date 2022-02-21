@@ -17,7 +17,7 @@ export class AdviserAndAssistantItemTypesComponent {
       parent: null,
       title: "James Smith",
       description: "Parent Item",
-      image: "/assets/photos/a.png"
+      image: "./assets/photos/a.png"
     }),
     new OrgItemConfig({
       id: 1,
@@ -27,7 +27,7 @@ export class AdviserAndAssistantItemTypesComponent {
       title: "Robert Canon",
       description: "Adviser item",
       groupTitle: "Adviser",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 2,
@@ -37,7 +37,7 @@ export class AdviserAndAssistantItemTypesComponent {
       title: "Ted Lucas",
       description: "Assitant Item",
       groupTitle: "Assistant",
-      image: "/assets/photos/c.png"
+      image: "./assets/photos/c.png"
     }),
     new OrgItemConfig({
       id: 3,
@@ -45,7 +45,7 @@ export class AdviserAndAssistantItemTypesComponent {
       title: "Fritz Stuger",
       description: "Regular Item",
       groupTitle: "Regular",
-      image: "/assets/photos/d.png"
+      image: "./assets/photos/d.png"
     })
   ]
 }

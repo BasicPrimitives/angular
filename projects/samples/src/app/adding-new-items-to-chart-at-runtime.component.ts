@@ -41,7 +41,7 @@ export class AddingNewItemsToChartAtRuntimeComponent {
       parent: 0,
       title: "Lynne Rathinam",
       description: "GM, Enterprise Services",
-      image: "/assets/photos/d.png"
+      image: "./assets/photos/d.png"
     })
   ];
   
@@ -55,7 +55,7 @@ export class AddingNewItemsToChartAtRuntimeComponent {
       parent: itemConfig.id,
       title: "New Title",
       description: "New Description",
-      image: "/assets/photos/z.png"
+      image: "./assets/photos/z.png"
     });
 
     this.items = [...items, newItem];
