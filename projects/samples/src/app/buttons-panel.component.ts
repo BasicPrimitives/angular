@@ -39,7 +39,7 @@ export class ButtonsPanelComponent {
       parent: 0,
       title: "Lynne Rathinam",
       description: "GM, Enterprise Services",
-      image: "/assets/photos/d.png"
+      image: "./assets/photos/d.png"
     })
   ];
   

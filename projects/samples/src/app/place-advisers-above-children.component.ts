@@ -18,7 +18,7 @@ export class PlaceAdvisersAboveChildrenComponent {
       parent: null,
       title: "James Smith",
       description: "Parent Item",
-      image: "/assets/photos/a.png"
+      image: "./assets/photos/a.png"
     }),
     new OrgItemConfig({
       id: 1,
@@ -28,21 +28,21 @@ export class PlaceAdvisersAboveChildrenComponent {
       title: "Robert Canon",
       description: "Adviser item",
       groupTitle: "Adviser",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 3,
       parent: 1,
       title: "Fritz Stuger",
       description: "Regular Item",
-      image: "/assets/photos/d.png"
+      image: "./assets/photos/d.png"
     }),
     new OrgItemConfig({
       id: 4,
       parent: 1,
       title: "Ted Lucas",
       description: "Regular Item",
-      image: "/assets/photos/d.png"
+      image: "./assets/photos/d.png"
     }),
     new OrgItemConfig({
       id: 5,
@@ -50,7 +50,7 @@ export class PlaceAdvisersAboveChildrenComponent {
       title: "James Nunnally",
       description: "Regular Item",
       groupTitle: "Regular",
-      image: "/assets/photos/d.png"
+      image: "./assets/photos/d.png"
     }),
     new OrgItemConfig({
       id: 6,
@@ -58,7 +58,7 @@ export class PlaceAdvisersAboveChildrenComponent {
       title: "Harry Harter",
       description: "Regular Item",
       groupTitle: "Regular",
-      image: "/assets/photos/d.png"
+      image: "./assets/photos/d.png"
     })
   ];
 }

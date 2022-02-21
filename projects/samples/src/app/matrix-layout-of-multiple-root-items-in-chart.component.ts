@@ -24,63 +24,63 @@ export class MatrixLayoutOfMultipleRootItemsInChartComponent {
       parent: 0,
       title: "Item 1",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 2,
       parent: 0,
       title: "Item 2",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 3,
       parent: 0,
       title: "Item 3",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 4,
       parent: 0,
       title: "Item 4",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 5,
       parent: 0,
       title: "Item 5",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 6,
       parent: 0,
       title: "Item 6",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 7,
       parent: 0,
       title: "Item 7",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 8,
       parent: 0,
       title: "Item 8",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new OrgItemConfig({
       id: 9,
       parent: 0,
       title: "Item 9",
       description: "Some description about item",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     })
   ]
 }

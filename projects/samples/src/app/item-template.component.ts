@@ -16,7 +16,7 @@ export class ItemTemplateComponent {
       parent: null,
       title: "James Smith",
       description: "VP, Public Sector",
-      image: "/assets/photos/a.png",
+      image: "./assets/photos/a.png",
       context: { phone: "(123) 456-78-90", email: "itema@org.com" },
       templateName: "contactTemplate",
       itemTitleColor: "red"
@@ -27,7 +27,7 @@ export class ItemTemplateComponent {
       parent: 0,
       title: "Ted Lucas",
       description: "VP, Human Resources",
-      image: "/assets/photos/b.png",
+      image: "./assets/photos/b.png",
       templateName: "contactTemplate"
       //groupTitle: "Group 1"
     }),
@@ -37,7 +37,7 @@ export class ItemTemplateComponent {
       title: "Fritz Stuger",
       context: { phone: "(123) 654-78-90", email: "itemc@org.com" },
       description: "Business Solutions, US",
-      image: "/assets/photos/c.png",
+      image: "./assets/photos/c.png",
       templateName: "contactTemplate",
       //groupTitle: "Group 3"
     })

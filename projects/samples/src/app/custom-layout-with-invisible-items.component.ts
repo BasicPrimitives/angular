@@ -21,7 +21,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
       parent: null,
       title: "Title A",
       description: "Description A",
-      image: "/assets/photos/a.png"
+      image: "./assets/photos/a.png"
     });
     items.push(rootItem);
 
@@ -30,7 +30,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
       parent: 0,
       title: "Assistant 1",
       description: "Assistant Description",
-      image: "/assets/photos/a.png",
+      image: "./assets/photos/a.png",
       itemType: ItemType.Assistant,
       adviserPlacementType: AdviserPlacementType.Right,
       groupTitle: "Audit",
@@ -42,7 +42,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
       parent: 0,
       title: "Assistant 2",
       description: "Assistant Description",
-      image: "/assets/photos/b.png",
+      image: "./assets/photos/b.png",
       itemType: ItemType.Assistant,
       adviserPlacementType: AdviserPlacementType.Left,
       groupTitle: "Audit",
@@ -55,7 +55,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
         parent: 1,
         title: "Sub Adviser",
         description: "Sub Adviser Description",
-        image: "/assets/photos/s.png",
+        image: "./assets/photos/s.png",
         itemType: ItemType.SubAdviser,
         adviserPlacementType: AdviserPlacementType.Left,
         groupTitle: "Sub Adviser",
@@ -66,7 +66,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
         parent: 2,
         title: "Sub Adviser",
         description: "Sub Adviser Description",
-        image: "/assets/photos/s.png",
+        image: "./assets/photos/s.png",
         itemType: ItemType.SubAdviser,
         adviserPlacementType: AdviserPlacementType.Right,
         groupTitle: "Sub Adviser",
@@ -89,7 +89,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
       parent: 12,
       title: "Assistant 3",
       description: "Assistant Description",
-      image: "/assets/photos/c.png",
+      image: "./assets/photos/c.png",
       itemType: ItemType.Assistant,
       adviserPlacementType: AdviserPlacementType.Right,
       groupTitle: "Audit",
@@ -102,7 +102,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
       parent: 12,
       title: "Assistant 4",
       description: "Assistant Description",
-      image: "/assets/photos/d.png",
+      image: "./assets/photos/d.png",
       itemType: ItemType.Assistant,
       adviserPlacementType: AdviserPlacementType.Left,
       groupTitle: "Audit",
@@ -126,7 +126,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
           parent: 12,
           title: index.toString() + " Full Time",
           description: index.toString() + " Description",
-          image: "/assets/photos/f.png",
+          image: "./assets/photos/f.png",
           groupTitle: "Full Time"
         }));
       }
@@ -138,7 +138,7 @@ export class CustomLayoutWithInvisibleItemsComponent {
         parent: 18,
         title: index.toString() + " Part Time",
         description: index.toString() + " Description",
-        image: "/assets/photos/p.png",
+        image: "./assets/photos/p.png",
         groupTitle: "Part Time",
         groupTitleColor: Colors.Green
       }));

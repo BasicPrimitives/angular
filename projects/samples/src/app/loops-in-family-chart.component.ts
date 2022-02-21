@@ -23,12 +23,12 @@ export class LoopsInFamilyChartComponent {
   ];
 
   items = [
-    new FamItemConfig({ id: 1, parents: [3, 5, 6, 7], title: "James", label: "James", description: "James is First and he is child of Brad, Sara & Lynette", image: "/assets/photos/j.png" }),
-    new FamItemConfig({ id: 2, parents: [1], title: "Brad", label: "Brad", description: "", image: "/assets/photos/b.png" }),
-    new FamItemConfig({ id: 3, parents: [2], title: "Thomas", label: "Thomas", description: "", image: "/assets/photos/t.png" }),
-    new FamItemConfig({ id: 4, parents: [3], title: "David", label: "David", description: "", image: "/assets/photos/d.png" }),
-    new FamItemConfig({ id: 5, parents: [4], title: "Lynette", label: "Lynette", description: "", image: "/assets/photos/l.png" }),
-    new FamItemConfig({ id: 6, parents: [4], title: "Sara", label: "Sara", description: "", image: "/assets/photos/s.png" }),
-    new FamItemConfig({ id: 7, title: "Parent", label: "Parent", description: "Parent node of James", image: "/assets/photos/j.png" })
+    new FamItemConfig({ id: 1, parents: [3, 5, 6, 7], title: "James", label: "James", description: "James is First and he is child of Brad, Sara & Lynette", image: "./assets/photos/j.png" }),
+    new FamItemConfig({ id: 2, parents: [1], title: "Brad", label: "Brad", description: "", image: "./assets/photos/b.png" }),
+    new FamItemConfig({ id: 3, parents: [2], title: "Thomas", label: "Thomas", description: "", image: "./assets/photos/t.png" }),
+    new FamItemConfig({ id: 4, parents: [3], title: "David", label: "David", description: "", image: "./assets/photos/d.png" }),
+    new FamItemConfig({ id: 5, parents: [4], title: "Lynette", label: "Lynette", description: "", image: "./assets/photos/l.png" }),
+    new FamItemConfig({ id: 6, parents: [4], title: "Sara", label: "Sara", description: "", image: "./assets/photos/s.png" }),
+    new FamItemConfig({ id: 7, title: "Parent", label: "Parent", description: "Parent node of James", image: "./assets/photos/j.png" })
   ];
 }

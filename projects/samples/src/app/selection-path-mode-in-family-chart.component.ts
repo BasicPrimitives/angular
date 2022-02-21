@@ -18,28 +18,28 @@ export class SelectionPathModeInFamilyChartComponent {
       id: 0,
       title: "James Smith",
       description: "VP, Public Sector",
-      image: "/assets/photos/a.png"
+      image: "./assets/photos/a.png"
     }),
     new FamItemConfig({
       id: 1,
       parents: [0],
       title: "Ted Lucas",
       description: "VP, Human Resources",
-      image: "/assets/photos/b.png"
+      image: "./assets/photos/b.png"
     }),
     new FamItemConfig({
       id: 2,
       parents: [1],
       title: "Fritz Stuger",
       description: "Business Solutions, US",
-      image: "/assets/photos/c.png"
+      image: "./assets/photos/c.png"
     }),
     new FamItemConfig({
       id: 3,
       parents: [2],
       title: "Robert Canon",
       description: "Business Solutions, Canada",
-      image: "/assets/photos/z.png"
+      image: "./assets/photos/z.png"
     })
   ];
 }
