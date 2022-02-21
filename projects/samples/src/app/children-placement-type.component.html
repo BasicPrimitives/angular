@@ -1,0 +1,44 @@
+<h1>Children Placement</h1>
+<div class="sample">
+    <org-diagram 
+        [items]="items"
+        [pageFitMode]=PageFitMode.None
+        [maximumColumnsInMatrix]=3
+        [cursorItem]=1
+        [highlightItem]=0
+        [normalItemsInterval]=20
+        [cousinsIntervalMultiplier]=1
+        [defaultTemplateName]="'info'"
+        [templates]="[
+            {
+                name: 'info',
+                itemSize: { width: 150, height: 50 },
+                minimizedItemSize: { width: 3, height: 3 },
+                cursorPadding: { left: 0, top: 0, right: 0, bottom: 0 },
+                highlightPadding: { left: 4, top: 4, right: 4, bottom: 4 },
+                itemTemplate: info,
+                highlightTemplate: highlightTemplate,
+                cursorTemplate: cursorTemplate
+            }
+        ]"
+        [hasSelectorCheckbox]=Enabled.False
+        [centerOnCursor]=true>
+    </org-diagram>
+</div>
+<ng-template #info let-itemConfig="context" let-isCursor="isCursor">
+    <mat-card class="example-card">
+        <mat-card-title-group>
+            <mat-card-subtitle>{{itemConfig.title}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-footer>
+            <ng-container *ngIf="isCursor">
+                <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+            </ng-container>
+        </mat-card-footer>
+    </mat-card>
+</ng-template>
+<ng-template #cursorTemplate let-itemConfig="context">
+</ng-template>
+<ng-template #highlightTemplate let-itemConfig="context">
+    <div class="highlight-frame"></div>
+</ng-template>

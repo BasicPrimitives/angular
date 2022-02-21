@@ -1,0 +1,9 @@
+<div class="item corner-all item-frame default-template">
+  <div class="title-background item corner-all item-frame" [ngStyle]="{backgroundColor}">
+    <div class="item item-title" [ngStyle]="{color}">{{itemConfig.title}}</div>
+  </div>
+  <div class="photo-frame item">
+    <img class="photo" [src]="itemConfig.image" [alt]="itemConfig.title" />
+  </div>
+  <div class="item description">{{itemConfig.description}}</div>
+</div>

@@ -1,0 +1,29 @@
+<h1>Selection path mode</h1>
+<p>
+    <span>Set selection path mode:&nbsp;</span>
+    <mat-radio-group [(ngModel)]="selectionPathMode" aria-label="Select an option">
+        <mat-radio-button [value]="SelectionPathMode.None">None</mat-radio-button>
+        <mat-radio-button [value]="SelectionPathMode.FullStack">Full Stack</mat-radio-button>
+    </mat-radio-group>
+</p>
+<div class="sample-480">
+    <fam-diagram 
+        [items]="items"
+        [selectionPathMode]="selectionPathMode"
+        [selectedItems]="[3]"
+        [pageFitMode]=PageFitMode.FitToPage
+        [cursorItem]=0
+        [linesWidth]=1
+        [arrowsDirection]=GroupByType.None
+        [showExtraArrows]=true
+        [linesColor]="'black'"
+        [normalLevelShift]=20
+        [dotLevelShift]=20
+        [lineLevelShift]=20
+        [normalItemsInterval]=10
+        [dotItemsInterval]=30
+        [lineItemsInterval]=30
+        [hasSelectorCheckbox]=Enabled.True
+        [centerOnCursor]=true
+    ></fam-diagram>
+</div>

@@ -1,0 +1,30 @@
+<h1>Level Annotation Template</h1>
+<div class="sample">
+    <org-diagram 
+        [items]="items"
+        [annotations]="annotations"
+        [levelBackgroundTemplate]="levelBackgroundTemplate"
+        [levelTitleTemplate]="levelTitleTemplate"
+        [pageFitMode]=PageFitMode.FitToPage
+        [cursorItem]=0
+        [normalItemsInterval]=40
+        [arrowsDirection]=GroupByType.Parents
+        [hasSelectorCheckbox]=Enabled.True
+        [centerOnCursor]=true>
+    </org-diagram>
+</div>
+<ng-template #levelTitleTemplate let-config="context" let-width="width" let-height="height">
+    <div (click)="onClick($event, config)" class="level-title" [ngStyle]="{background: config.titleColor}" >
+        <rotated-text
+            [width]="width"
+            [height]="height"
+            [orientation]="TextOrientationType.RotateRight"
+            [horizontalAlignment]="HorizontalAlignmentType.Center"
+            [verticalAlignment]="VerticalAlignmentType.Middle"
+        >{{config.title}}</rotated-text>
+    </div>
+</ng-template>
+<ng-template #levelBackgroundTemplate let-config="context" let-width="width" let-height="height">
+    <div *ngIf="config.opacity" class="level-background-even">{{config.title}}</div>
+    <div *ngIf="!config.opacity" class="level-background-odd">{{config.title}}</div>
+</ng-template>

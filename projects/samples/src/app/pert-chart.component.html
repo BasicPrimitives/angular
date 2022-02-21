@@ -1,0 +1,56 @@
+<h1>PERT Chart & Critical Path Visualization</h1>
+<div class="sample">
+    <fam-diagram 
+        [items]="items"
+        [annotations]="annotations"
+        [pageFitMode]=PageFitMode.None
+        [orientationType]=OrientationType.Left
+        [defaultTemplateName]="'pert'"
+        [highlightLinesColor]="'navy'"
+        [highlightLinesWidth]=2
+        [highlightLinesType]=LineType.Solid
+        [cursorItem]=0
+        [linesWidth]=2
+        [arrowsDirection]=GroupByType.Children
+        [showExtraArrows]=true
+        [linesColor]="'gray'"
+        [normalLevelShift]=20
+        [dotLevelShift]=20
+        [lineLevelShift]=20
+        [normalItemsInterval]=30
+        [dotItemsInterval]=30
+        [lineItemsInterval]=30
+        [hasSelectorCheckbox]=Enabled.False
+        [centerOnCursor]=true
+        [templates]="[
+            {
+                name: 'pert',
+                itemSize: { width: 150, height: 80 },
+                minimizedItemSize: { width: 3, height: 3 },
+                cursorPadding: { left: 0, top: 0, right: 0, bottom: 0 },
+                highlightPadding: { left: 4, top: 4, right: 4, bottom: 4 },
+                itemTemplate: pert,
+                highlightTemplate: highlightTemplate,
+                cursorTemplate: cursorTemplate
+            }
+        ]"
+    ></fam-diagram>
+</div>
+<ng-template #pert let-itemConfig="context" let-isCursor="isCursor">
+    <mat-card class="example-card">
+        <mat-card-title-group>
+            <mat-card-subtitle>{{itemConfig.title}}</mat-card-subtitle>
+            <mat-card-subtitle>ET:{{itemConfig.context.et}} / LT:{{itemConfig.context.lt}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-footer>
+            <ng-container *ngIf="isCursor">
+                <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+            </ng-container>
+        </mat-card-footer>
+    </mat-card>
+</ng-template>
+<ng-template #cursorTemplate let-itemConfig="context">
+</ng-template>
+<ng-template #highlightTemplate let-itemConfig="context">
+    <div class="highlight-frame"></div>
+</ng-template>

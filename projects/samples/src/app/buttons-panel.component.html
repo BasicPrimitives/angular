@@ -1,0 +1,22 @@
+<h1>Buttons Panel</h1>
+<div class="sample">
+    <org-diagram 
+        [items]="items" 
+        [pageFitMode]=PageFitMode.None
+        [cursorItem]="cursorItem"
+        [hasSelectorCheckbox]=Enabled.True
+        [hasButtons]=Enabled.True
+        [buttonsPanelSize]=40
+        [centerOnCursor]=true
+        [buttonsTemplate]="buttonsTemplate"
+    >
+    </org-diagram>
+</div>
+<ng-template #buttonsTemplate let-itemConfig="context">
+    <button mat-icon-button aria-label="Coffe" (click)="onAddButtonClick($event, itemConfig)">
+        <mat-icon>coffee</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Tree" (click)="onRemoveButtonClick($event, itemConfig)">
+        <mat-icon>account_tree</mat-icon>
+    </button>
+</ng-template>

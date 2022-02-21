@@ -1,0 +1,18 @@
+<div *ngIf="hasVerticalAlignment; then tableTemplate; else divTemplate"></div>
+<ng-template #tableTemplate>
+  <table [ngStyle]="tableStyle">
+    <tbody>
+      <tr>
+        <td [ngStyle]="tdStyle">
+          <ng-container *ngTemplateOutlet="content"></ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #divTemplate>
+  <div [ngStyle]="divStyle">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </div>
+</ng-template>
+<ng-template #content><ng-content></ng-content></ng-template>

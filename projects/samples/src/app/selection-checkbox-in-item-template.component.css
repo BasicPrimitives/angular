@@ -1,0 +1,26 @@
+mat-card {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+}
+
+mat-card-header {
+    flex-shrink: 0;
+}
+
+mat-card-content{
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.contact-label 
+{
+    position: absolute;
+    text-align: center;
+    top: -20px;
+    left: 2px;
+    right: 2px;
+    height: 16px; 
+}

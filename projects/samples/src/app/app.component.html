@@ -1,0 +1,42 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+    <h3>Version: {{version}}</h3>
+    <h2>Angular Use Cases</h2>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <button mat-icon-button disabled></button>
+        <a routerLink="/{{node.path}}" class="samples-link">{{node.name}}</a>
+      </mat-tree-node>
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <button mat-icon-button matTreeNodeToggle
+                [attr.aria-label]="'Toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+        {{node.name}}        
+      </mat-tree-node>
+    </mat-tree>
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button aria-label="Open samples drawer" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Basic Primitives</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button aria-label="Home" onClick="window.open('https://www.basicprimitives.com')">
+        <mat-icon>home</mat-icon>
+      </button>
+    </mat-toolbar>
+    
+    <div class="content" role="main">
+      <router-outlet></router-outlet>  
+      <input type="hidden" #selection>
+    </div>
+  </div>
+
+</mat-drawer-container>
+

@@ -1,0 +1,17 @@
+<h1>Zoom using CSS Scale Transform</h1>
+<p>
+    <span>Select CSS scale transform: &nbsp;</span>
+    <mat-radio-group name="scale" [(ngModel)]="scale" aria-label="Select an option">
+        <mat-radio-button *ngFor="let item of scales" [value]="item.scale">{{item.name}}</mat-radio-button>
+    </mat-radio-group>
+</p>
+<div class="sample">
+    <org-diagram 
+        [items]="items"
+        [scale]="scale"
+        [pageFitMode]=PageFitMode.None
+        [cursorItem]=0
+        [hasSelectorCheckbox]=Enabled.True
+        [centerOnCursor]=true>
+    </org-diagram>
+</div>
