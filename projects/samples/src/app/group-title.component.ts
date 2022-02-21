@@ -17,7 +17,7 @@ export class GroupTitleComponent {
       parent: null,
       title: 'James Smith',
       description: 'VP, Public Sector',
-      image: '/assets/photos/a.png',
+      image: './assets/photos/a.png',
       groupTitle: "Group 1"
     }),
     new OrgItemConfig({
@@ -25,7 +25,7 @@ export class GroupTitleComponent {
       parent: 0,
       title: 'Ted Lucas',
       description: 'VP, Human Resources',
-      image: '/assets/photos/b.png',
+      image: './assets/photos/b.png',
       groupTitle: "Group 2",
       groupTitleColor: Colors.Gray
     }),
@@ -34,7 +34,7 @@ export class GroupTitleComponent {
       parent: 0,
       title: 'Fritz Stuger',
       description: 'Business Solutions, US',
-      image: '/assets/photos/c.png',
+      image: './assets/photos/c.png',
       groupTitle: "Group 2"
     })
   ];

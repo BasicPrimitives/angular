@@ -18,21 +18,21 @@ export class SelectingHighlightItemComponent {
       parent: null,
       title: 'James Smith',
       description: 'VP, Public Sector',
-      image: '/assets/photos/a.png'
+      image: './assets/photos/a.png'
     }),
     new OrgItemConfig({
       id: 1,
       parent: 0,
       title: 'Ted Lucas',
       description: 'VP, Human Resources',
-      image: '/assets/photos/b.png'
+      image: './assets/photos/b.png'
     }),
     new OrgItemConfig({
       id: 2,
       parent: 0,
       title: 'Fritz Stuger',
       description: 'Business Solutions, US',
-      image: '/assets/photos/c.png'
+      image: './assets/photos/c.png'
     })
   ];
 
