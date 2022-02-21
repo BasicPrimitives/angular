@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OrgItemConfig, Enabled, PageFitMode, ShapeType, Colors } from 'basic-primitives';
+import { OrgItemConfig, Enabled, PageFitMode, ShapeType, Colors } from 'ngx-basic-primitives';
 
 @Component({
   selector: 'app-show-frame',

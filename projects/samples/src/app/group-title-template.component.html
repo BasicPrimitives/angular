@@ -1,0 +1,26 @@
+<h1>Group Title Template</h1>
+<div class="sample">
+    <org-diagram 
+        [items]="items"
+        [pageFitMode]=PageFitMode.FitToPage
+        [cursorItem]=0
+        [hasSelectorCheckbox]=Enabled.True
+        [itemTitleFirstFontColor]="'#FFFF00'"
+        [itemTitleSecondFontColor]="'#0000FF'"
+        [groupTitleOrientation]="TextOrientationType.RotateRight"
+        [groupTitleTemplate]="groupTitleTemplate"
+        [centerOnCursor]=true
+    >
+    </org-diagram>
+</div>
+<ng-template #groupTitleTemplate let-itemConfig="context">
+    <div (click)="onClick($event, itemConfig)" class="group-title">
+        <rotated-text
+            [width]="20"
+            [height]="100"
+            [orientation]="TextOrientationType.RotateRight"
+            [horizontalAlignment]="HorizontalAlignmentType.Center"
+            [verticalAlignment]="VerticalAlignmentType.Middle"
+        >{{itemConfig.groupTitle}}</rotated-text>
+    </div>
+</ng-template>

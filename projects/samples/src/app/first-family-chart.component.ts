@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FamItemConfig, Enabled, PageFitMode, GroupByType } from 'basic-primitives';
+import { FamItemConfig, Enabled, PageFitMode, GroupByType } from 'ngx-basic-primitives';
 
 @Component({
   selector: 'app-first-family-chart',

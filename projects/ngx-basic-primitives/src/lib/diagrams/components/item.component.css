@@ -1,0 +1,80 @@
+.item {
+  position: absolute;
+  overflow: visible;
+  font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: content-box;
+}
+
+.corner-all {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.item-frame {
+  border: 1px solid #dddddd;
+  background: #eeeeee;
+  color: #333333;
+}
+
+.default-template {
+  width: 100%;
+  height: 100%;
+  left: -1px;
+  top: -1px;
+}
+
+.item-title {
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  font-size: 14px;
+  line-height: 16px;
+  color: white;
+  padding: 0;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 16px;
+}
+
+.title-background {
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 20px;
+}
+
+.photo-frame {
+  border: 1px solid #cccccc;
+  background: #f6f6f6;
+  color: #1c94c4;
+  top: 26px;
+  left: 2px;
+  width: 50px;
+  height: 60px;
+}
+
+.photo {
+  height: 60px;
+  width: 50px;
+}
+
+.description {
+  overflow: hidden;
+  text-align: left;
+  top: 26px;
+  left: 56px;
+  right: 2px;
+  bottom: 2px;
+  font-size: 12px;
+}

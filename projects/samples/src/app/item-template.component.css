@@ -2,6 +2,17 @@ mat-card {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  display:flex;
+  flex-direction: column;
+}
+
+mat-card-header {
+  flex-shrink: 0;
+}
+
+mat-card-content{
+  flex-grow: 1;
+  overflow: auto;
 }
 .highlight-frame {
     background-color: gray;

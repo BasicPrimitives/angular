@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { OrgItemConfig, Enabled, PageFitMode } from 'basic-primitives';
-import { SelectionEventArgs } from 'dist/basic-primitives/lib/events';
+import { OrgItemConfig, Enabled, PageFitMode } from 'ngx-basic-primitives';
+import { SelectionEventArgs } from 'dist/ngx-basic-primitives/lib/events';
 
 @Component({
   selector: 'app-selecting-items',

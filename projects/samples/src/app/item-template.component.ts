@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OrgItemConfig, Enabled, PageFitMode } from 'basic-primitives';
+import { OrgItemConfig, Enabled, PageFitMode } from 'ngx-basic-primitives';
 
 @Component({
   selector: 'app-item-template',

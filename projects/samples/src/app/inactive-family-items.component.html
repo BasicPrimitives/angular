@@ -1,0 +1,63 @@
+<h1>Inactive Family Items in layout</h1>
+<div class="sample">
+    <fam-diagram 
+        [items]="items"
+        [pageFitMode]=PageFitMode.FitToPage
+        [neighboursSelectionMode]=NeighboursSelectionMode.ParentsChildrenSiblingsAndSpouses
+        [normalLevelShift]=20
+        [dotLevelShift]=20
+        [lineLevelShift]=10
+        [normalItemsInterval]=10
+        [dotItemsInterval]=10
+        [lineItemsInterval]=4
+        [defaultTemplateName]="'ContactTemplate'"
+        [templates]="[
+            {
+                name: 'ContactTemplate',
+                itemSize: { width: 240, height: 120 },
+                minimizedItemSize: { width: 6, height: 6 },
+                highlightPadding: { left: 4, top: 4, right: 4, bottom: -18 },
+                itemTemplate: contactTemplate,
+                cursorTemplate: contactCursorTemplate,
+                highlightTemplate: contactHighlightTemplate,
+                cursorPadding: { left: 0, top: 0, right: 0, bottom: 0 }
+            },
+            {
+                name: 'DepartmentTitleTemplate',
+                isActive: false,
+                itemSize: { width: 200, height: 30 },
+                minimizedItemSize: { width: 3, height: 3 },
+                highlightPadding: { left: 2, top: 2, right: 2, bottom: 2 },
+                itemTemplate: departmentTitleTemplate
+            }
+        ]"
+        [cursorItem]=0
+        [hasSelectorCheckbox]=Enabled.True
+        [centerOnCursor]=true>
+    </fam-diagram>
+</div>
+<ng-template #departmentTitleTemplate let-itemConfig="context" let-isCursor="isCursor">
+    <div class="department-title-background" [ngStyle]="{'background-color': itemConfig.itemTitleColor}">
+        <div class="department-title">{{itemConfig.title}}</div>
+    </div>
+</ng-template>
+<ng-template #contactTemplate let-itemConfig="context" let-isCursor="isCursor">
+    <mat-card class="example-card">
+        <mat-card-title-group>
+            <mat-card-title>{{itemConfig.title}}</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+            {{itemConfig.description}}
+        </mat-card-content>
+        <ng-container *ngIf="isCursor">
+            <mat-card-footer>
+                <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+            </mat-card-footer>
+        </ng-container>
+    </mat-card>
+</ng-template>
+<ng-template #contactCursorTemplate let-itemConfig="context">
+</ng-template>
+<ng-template #contactHighlightTemplate let-itemConfig="context">
+    <div class="highlight-frame"></div>
+</ng-template>

@@ -3,24 +3,22 @@ Create empty angular workspace
 ng new angular --no-create-application
 ```
 
-Add basic-primitives library project
+Add ngx-basic-primitives library project
 ```
 cd angular
-ng generate library basic-primitives
+ng generate library ngx-basic-primitives
 ```
 
-Rename package name to `basicprimitivesangular`
-
-Build basic-primitives library
+Build ngx-basic-primitives library
 
 ```
-ng build basic-primitives
+ng build ngx-basic-primitives
 ```
 
-Build and watch basic-primitives library
+Build and watch ngx-basic-primitives library
 
 ```
-ng build basic-primitives --watch
+ng build ngx-basic-primitives --watch
 ```
 
 Add samples project
@@ -35,15 +33,15 @@ Serve samples application
 ng serve
 ```
 
-Add `org-diagram` component to `basic-primitives` library
+Add `org-diagram` component to `ngx-basic-primitives` library
 ```
-ng generate component org-diagram --project=basic-primitives
+ng generate component org-diagram --project=ngx-basic-primitives
 ```
 
-Add `org-config` configuration class to `basic-primitives` library
+Add `org-config` configuration class to `ngx-basic-primitives` library
 
 ```
-ng generate class configs/org-config --project=basic-primitives --skip-tests
+ng generate class configs/org-config --project=ngx-basic-primitives --skip-tests
 ```
 
 Add First Organizational Chart Component to Samples

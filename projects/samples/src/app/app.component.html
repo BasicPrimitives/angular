@@ -1,6 +1,6 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side" opened>
-    <h3>Version: 6.5.1</h3>
+    <h3>Version: {{version}}</h3>
     <h2>Angular Use Cases</h2>
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
       <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
@@ -22,12 +22,12 @@
 
   <div class="example-sidenav-content">
     <mat-toolbar color="primary">
-      <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+      <button mat-icon-button aria-label="Open samples drawer" (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
       <span>Basic Primitives</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button aria-label="Example icon-button with share icon">
+      <button mat-icon-button aria-label="Home" onClick="window.open('https://www.basicprimitives.com')">
         <mat-icon>home</mat-icon>
       </button>
     </mat-toolbar>

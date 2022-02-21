@@ -1,0 +1,13 @@
+<h1>Advisers Children Placement</h1>
+<mat-slide-toggle [(ngModel)]="placeAdvisersAboveChildren">Place Advisers Above Children:</mat-slide-toggle>
+<div class="sample">
+    <org-diagram 
+        [items]="items"
+        [placeAdvisersAboveChildren]="placeAdvisersAboveChildren"
+        [pageFitMode]=PageFitMode.FitToPage
+        [cursorItem]=0
+        [arrowsDirection]=GroupByType.Children
+        [hasSelectorCheckbox]=Enabled.True
+        [centerOnCursor]=true>
+    </org-diagram>
+</div>

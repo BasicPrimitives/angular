@@ -4,9 +4,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "basic-primitives": [
-        "dist/basic-primitives/basic-primitives",
-        "dist/basic-primitives"
+      "ngx-basic-primitives": [
+        "dist/ngx-basic-primitives/ngx-basic-primitives",
+        "dist/ngx-basic-primitives"
       ]
     },
     "outDir": "./dist/out-tsc",
@@ -27,7 +27,10 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

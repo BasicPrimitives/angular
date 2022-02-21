@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "basic-primitives": {
+    "ngx-basic-primitives": {
       "projectType": "library",
-      "root": "projects/basic-primitives",
-      "sourceRoot": "projects/basic-primitives/src",
+      "root": "projects/ngx-basic-primitives",
+      "sourceRoot": "projects/ngx-basic-primitives/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/basic-primitives/ng-package.json"
+            "project": "projects/ngx-basic-primitives/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/basic-primitives/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-basic-primitives/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/basic-primitives/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-basic-primitives/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,9 +27,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/basic-primitives/src/test.ts",
-            "tsConfig": "projects/basic-primitives/tsconfig.spec.json",
-            "karmaConfig": "projects/basic-primitives/karma.conf.js"
+            "main": "projects/ngx-basic-primitives/src/test.ts",
+            "tsConfig": "projects/ngx-basic-primitives/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-basic-primitives/karma.conf.js"
           }
         }
       }
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "basic-primitives"
+  "defaultProject": "ngx-basic-primitives"
 }

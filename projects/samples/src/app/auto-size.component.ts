@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatRadioChange } from '@angular/material/radio';
-import { OrgItemConfig, Enabled, PageFitMode, Size } from 'basic-primitives';
+import { OrgItemConfig, Enabled, PageFitMode, Size } from 'ngx-basic-primitives';
 
 @Component({
   selector: 'app-auto-size',

@@ -10,7 +10,7 @@
         [templates]="[
             {
                 name: 'contactTemplate',
-                itemSize: { width: 220, height: 134 },
+                itemSize: { width: 220, height: 140 },
                 minimizedItemSize: { width: 3, height: 3 },
                 highlightPadding: { left: 4, top: 4, right: 4, bottom: -18 },
                 itemTemplate: contactTemplate,
@@ -23,7 +23,7 @@
     </org-diagram>
 </div>
 <ng-template #contactTemplate let-itemConfig="context" let-isCursor="isCursor">
-    <mat-card class="example-card" [ngStyle]="{height:150}">
+    <mat-card class="example-card">
         <mat-card-title-group>
             <mat-card-title>{{itemConfig.title}}</mat-card-title>
             <mat-card-subtitle>Small</mat-card-subtitle>
