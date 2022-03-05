@@ -39,5 +39,31 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^13.0.0",
     "typescript": "~4.5.2"
-  }
+  },
+    "keywords": [
+    "data analytics",
+    "data visualization",
+    "visualization",
+    "diagrams",
+    "stable diagram layout",
+    "diagram",
+    "diagrams visualization",
+    "diagram editor",
+    "diagram generator",
+    "tree",
+    "hierarchy",
+    "organizational chart",
+    "multiple inheritance visualization",
+    "family tree",
+    "dependency diagram",
+    "dependencies diagram",
+    "financial ownership diagram",
+    "layered graph",
+    "graph",
+    "component",
+    "typescript",
+    "component library",
+    "angular component",
+    "angular"
+  ]
 }
