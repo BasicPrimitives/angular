@@ -5,9 +5,10 @@ mat-card {
     display:flex;
     flex-direction: column;
 }
-
-mat-card-header {
-    flex-shrink: 0;
+  
+mat-card-title-group {
+    display:flex;
+    justify-content: unset;
 }
 
 mat-card-content{

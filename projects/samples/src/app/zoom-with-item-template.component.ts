@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatLegacyRadioChange as MatRadioChange } from '@angular/material/legacy-radio';
+import { MatRadioChange } from '@angular/material/radio';
 import { OrgItemConfig, Enabled, PageFitMode } from 'ngx-basic-primitives';
 
 @Component({

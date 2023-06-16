@@ -6,14 +6,16 @@ mat-card {
   flex-direction: column;
 }
 
-mat-card-header {
-  flex-shrink: 0;
+mat-card-title-group {
+  display:flex;
+  justify-content: unset;
 }
 
 mat-card-content{
   flex-grow: 1;
   overflow: auto;
 }
+
 .highlight-frame {
     background-color: gray;
     opacity: 0.1;

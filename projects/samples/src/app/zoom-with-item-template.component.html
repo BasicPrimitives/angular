@@ -70,7 +70,7 @@
     </org-diagram>
 </div>
 <ng-template #xs let-itemConfig="context" let-isCursor="isCursor">
-    <mat-card class="example-card">
+    <mat-card appearance="outlined" class="example-card">
         <mat-card-content>
             <mat-card-subtitle>{{itemConfig.title}}</mat-card-subtitle>
         </mat-card-content>
@@ -82,7 +82,7 @@
     </mat-card>
 </ng-template>
 <ng-template #sm let-itemConfig="context" let-isCursor="isCursor">
-    <mat-card class="example-card">
+    <mat-card appearance="outlined" class="example-card">
         <mat-card-content>
             <mat-card-title>{{itemConfig.title}}</mat-card-title>
             <mat-card-subtitle>{{itemConfig.context.email}}</mat-card-subtitle>
@@ -96,7 +96,7 @@
     </mat-card>
 </ng-template>
 <ng-template #md let-itemConfig="context" let-isCursor="isCursor">
-    <mat-card class="example-card">
+    <mat-card appearance="outlined" class="example-card">
         <mat-card-title-group>
             <mat-card-title>{{itemConfig.title}}</mat-card-title>
             <img mat-card-sm-image [src]="itemConfig.image" [alt]="itemConfig.title" >
@@ -113,7 +113,7 @@
     </mat-card>
 </ng-template>
 <ng-template #lg let-itemConfig="context" let-isCursor="isCursor">
-    <mat-card class="example-card">
+    <mat-card appearance="outlined" class="example-card">
         <mat-card-title-group>
             <mat-card-title>{{itemConfig.title}}</mat-card-title>
             <img mat-card-sm-image [src]="itemConfig.image" [alt]="itemConfig.title" >
@@ -130,7 +130,7 @@
     </mat-card>
 </ng-template>
 <ng-template #xl let-itemConfig="context" let-isCursor="isCursor">
-    <mat-card class="example-card">
+    <mat-card appearance="outlined" class="example-card">
         <mat-card-title-group>
             <mat-card-title>{{itemConfig.title}}</mat-card-title>
             <mat-card-subtitle>{{itemConfig.context.email}}</mat-card-subtitle>

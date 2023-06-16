@@ -1,5 +1,5 @@
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
-import { MatLegacyRadioChange as MatRadioChange } from '@angular/material/legacy-radio';
+import { MatRadioChange } from '@angular/material/radio';
 import { OrgItemConfig, Enabled, PageFitMode, ConnectorPlacementType, ConnectorAnnotationConfig, Size, AnnotationType, ConnectorShapeType, Colors, LineType, GroupByType } from 'ngx-basic-primitives';
 
 @Component({

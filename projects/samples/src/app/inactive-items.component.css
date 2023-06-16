@@ -33,6 +33,7 @@
     -khtml-border-radius: 4px;
     border-radius: 4px;
 }
+
 mat-card {
     width: 100%;
     height: 100%;
@@ -40,11 +41,12 @@ mat-card {
     display:flex;
     flex-direction: column;
 }
-
-mat-card-header {
-    flex-shrink: 0;
+  
+mat-card-title-group {
+    display:flex;
+    justify-content: unset;
 }
-
+  
 mat-card-content{
     flex-grow: 1;
     overflow: auto;
