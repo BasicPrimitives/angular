@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatCheckboxChange } from '@angular/material/checkbox';
+import { MatLegacyCheckboxChange as MatCheckboxChange } from '@angular/material/legacy-checkbox';
 import { OrgItemConfig, Enabled, PageFitMode } from 'ngx-basic-primitives';
 import { SelectionEventArgs } from 'dist/ngx-basic-primitives/lib/events';
 
