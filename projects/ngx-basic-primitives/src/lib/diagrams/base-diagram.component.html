@@ -80,8 +80,8 @@
       </div>
       <svg 
         *ngIf="layer.polylines.length > 0"
-        attr.height.px="{{placeholder.size.height}}"
-        attr.width.px="{{placeholder.size.width}}"
+        attr.height="{{placeholder.size.height}}px"
+        attr.width="{{placeholder.size.width}}px"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         [ngStyle]="{width: placeholder.size.width + 'px', height: placeholder.size.height + 'px'}"

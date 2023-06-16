@@ -13,7 +13,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
 import { MatLegacyProgressBarModule as MatProgressBarModule } from '@angular/material/legacy-progress-bar';
 import { MatLegacyRadioModule as MatRadioModule } from '@angular/material/legacy-radio';
-import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips'
 import { MatLegacySlideToggleModule as MatSlideToggleModule } from '@angular/material/legacy-slide-toggle'
 import { FormsModule } from '@angular/forms';
