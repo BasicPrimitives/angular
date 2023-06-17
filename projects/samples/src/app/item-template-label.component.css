@@ -4,16 +4,23 @@ mat-card {
     box-sizing: border-box;
     display:flex;
     flex-direction: column;
+    padding: 14px;
 }
   
 mat-card-title-group {
     display:flex;
     justify-content: unset;
+    padding: 0;
+}
+  
+mat-card-content {
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 0;
 }
 
-mat-card-content{
-    flex-grow: 1;
-    overflow: auto;
+mat-card-footer {
+    margin: -14px;
 }
 
 .contact-label 
