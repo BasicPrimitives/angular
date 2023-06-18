@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { TemplateConfig } from "../../configs/template-config";
 
 @Component({
-    selector: 'bp-highlight',
+    selector: 'bp-highlight:not(a)',
     template: '<div class="highlight" [ngStyle]="{borderWidth}"></div>',
     styleUrls: ['./highlight.component.css']
   })

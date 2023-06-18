@@ -19,7 +19,7 @@ function getBorderStyle(lineType: LineType) {
 }
 
 @Component({
-    selector: 'bp-level-background',
+    selector: 'bp-level-background:not(a)',
     template: '<div class="level-background" [ngStyle]="divStyle"></div>',
     styleUrls: ['./level-background.component.css']
   })
