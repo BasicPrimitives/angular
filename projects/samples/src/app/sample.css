@@ -21,6 +21,6 @@
   align-items: center;
 }
 
-.mat-radio-button ~ .mat-radio-button {
+.mat-mdc-radio-button ~ .mat-radio-button {
   margin: 16px;
 }

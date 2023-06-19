@@ -4,7 +4,7 @@ import { OrgItemConfig } from "../../configs/org-item-config";
 import { highestContrast } from "basicprimitives";
 
 @Component({
-    selector: 'bp-item',
+    selector: 'bp-item:not(a)',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.css']
   })

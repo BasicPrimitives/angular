@@ -20,7 +20,7 @@ class LevelTitleOptions {
 }
 
 @Component({
-    selector: 'bp-level-title',
+    selector: 'bp-level-title:not(a)',
     templateUrl: './level-title.component.html',
     styleUrls: ['./level-title.component.css']
   })

@@ -52,6 +52,7 @@ class BaseDiagramState {
 };
 
 @Component({
+  selector: 'base-diagram',
   templateUrl: './base-diagram.component.html',
   styleUrls: ['./base-diagram.component.css']
 })

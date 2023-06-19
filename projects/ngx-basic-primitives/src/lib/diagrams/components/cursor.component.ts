@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { TemplateConfig } from "../../configs/template-config";
 
 @Component({
-    selector: 'bp-cursor',
+    selector: 'bp-cursor:not(a)',
     template: '<div class="cursor" [ngStyle]="{width, height, borderWidth}"></div>',
     styleUrls: ['./cursor.component.css']
   })

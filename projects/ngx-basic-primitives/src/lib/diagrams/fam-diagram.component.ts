@@ -25,7 +25,7 @@ import { Size, Thickness } from '../structs';
 
 
 @Component({
-  selector: 'fam-diagram',
+  selector: 'fam-diagram:not(a)',
   templateUrl: './base-diagram.component.html',
   styleUrls: ['./base-diagram.component.css']
 })
