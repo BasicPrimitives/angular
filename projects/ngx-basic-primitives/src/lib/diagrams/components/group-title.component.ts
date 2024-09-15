@@ -22,7 +22,7 @@ class GroupTitleOptions {
 }
 
 @Component({
-    selector: 'bp-group-title',
+    selector: 'bp-group-title:not(a)',
     templateUrl: './group-title.component.html',
     styleUrls: ['./group-title.component.css']
   })

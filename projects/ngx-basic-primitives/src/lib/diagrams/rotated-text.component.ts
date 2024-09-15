@@ -2,7 +2,7 @@ import { Component, Input, OnChanges } from "@angular/core";
 import { TextOrientationType, VerticalAlignmentType, HorizontalAlignmentType } from "../enums";
 
 @Component({
-    selector: 'rotated-text',
+    selector: 'rotated-text:not(a)',
     templateUrl: './rotated-text.component.html',
     styleUrls: ['./rotated-text.component.css']
   })

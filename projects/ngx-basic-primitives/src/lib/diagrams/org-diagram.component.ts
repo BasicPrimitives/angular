@@ -20,7 +20,7 @@ import { OrgTaskManagerFactory } from 'basicprimitives';
 import { OrgConfig } from '../configs/org-config';
 
 @Component({
-  selector: 'org-diagram',
+  selector: 'org-diagram:not(a)',
   templateUrl: './base-diagram.component.html',
   styleUrls: ['./base-diagram.component.css']
 })

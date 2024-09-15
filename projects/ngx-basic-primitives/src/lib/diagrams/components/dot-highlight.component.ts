@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { TemplateConfig } from "../../configs/template-config";
 
 @Component({
-    selector: 'bp-dot-highlight',
+    selector: 'bp-dot-highlight:not(a)',
     template: '<div class="dot-highlight" [ngStyle]="divStyle"></div>',
     styleUrls: ['./dot-highlight.component.css']
   })
