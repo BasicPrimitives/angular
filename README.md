@@ -8,6 +8,12 @@ Data visualization diagramming components library for dependencies visualization
 * [Basic Primitives for Angular Live Demos](https://basicprimitives.github.io/angular/) - github live site
 
 ## Angular example
+Create new sample Angular application:
+```Shell
+ng new my-test-app --no-standalone
+```
+The `--no-standalone` option is needed to create module in Angular 17 application and later.
+
 Add library from NPM repository:
 
 ```Shell
