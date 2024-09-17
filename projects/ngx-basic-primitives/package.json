@@ -1,9 +1,9 @@
 {
   "name": "ngx-basic-primitives",
-  "version": "6.5.1",
+  "version": "6.5.3",
   "peerDependencies": {
-    "@angular/common": "~16.1.1",
-    "@angular/core": "~16.1.1",
+    "@angular/common": "~18.2.4",
+    "@angular/core": "~18.2.4",
     "basicprimitives": "^6.5.1"
   },
   "dependencies": {
