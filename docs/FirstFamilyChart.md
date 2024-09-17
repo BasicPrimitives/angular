@@ -1,4 +1,4 @@
-# First Family Chart for Angular 13
+# First Family Chart for Angular 18
 
 Basic Primitives Diagrams for Angular - data visualization component library that implements organizational chart and multi-parent dependency tree diagrams. It renders diagrams content using Angular Templates without direct DOM manipulations, so it is compliant with all Angular features
 
