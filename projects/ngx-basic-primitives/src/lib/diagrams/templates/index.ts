@@ -6,6 +6,7 @@ export * from "./CustomRenderTemplate";
 export * from "./DotHighlightTemplate";
 export * from "./GroupTitleTemplate";
 export * from "./HighlightTemplate";
+export * from "./EndPointTemplate";
 export * from "./ItemTemplate";
 export * from "./LabelAnnotationTemplate";
 export * from "./LevelBackgroundTemplate";

@@ -99,6 +99,9 @@
           <ng-container *ngSwitchCase="'groupTitleTemplate'">
             <bp-group-title [options]="item.context" [itemConfig]="item.context.context" [width]="item.context.width" [height]="item.context.height"></bp-group-title>
           </ng-container>
+          <ng-container *ngSwitchCase="'endPointTemplate'">
+            <bp-end-point [options]="item.context" [annotationConfig]="item.context.context" [isFromEndPoint]="item.context.context.isFromEndPoint"></bp-end-point>
+          </ng-container>
           <ng-container *ngSwitchCase="'cursorTemplate'">
             <bp-cursor [templateConfig]="item.context.templateConfig"></bp-cursor>
           </ng-container>

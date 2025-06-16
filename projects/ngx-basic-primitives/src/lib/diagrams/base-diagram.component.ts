@@ -18,7 +18,8 @@ import {
   CustomRenderTemplate,
   LabelAnnotationTemplate,
   LevelTitleTemplate,
-  LevelBackgroundTemplate
+  LevelBackgroundTemplate,
+  EndPointTemplate
 } from './templates';
 import { TemplateConfig } from '../configs/template-config';
 
@@ -110,7 +111,8 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
       CustomRenderTemplate,
       LabelAnnotationTemplate,
       LevelTitleTemplate,
-      LevelBackgroundTemplate
+      LevelBackgroundTemplate,
+      EndPointTemplate
     }
     this.tasks = taskManagerFactory.factory(this.getOptions.bind(this), this.getGraphics.bind(this), this.getLayout.bind(this), this.setLayout.bind(this), templates);
 
@@ -166,7 +168,8 @@ export class BaseDiagramComponent implements OnInit, AfterViewInit, OnDestroy {
       onGroupTitleRender: !config.groupTitleTemplate ? null : () => config.groupTitleTemplate,
       onLevelBackgroundRender: !config.levelBackgroundTemplate ? null : () => config.levelBackgroundTemplate,
       onLevelTitleRender: !config.levelTitleTemplate ? null : () => config.levelTitleTemplate,
-      onButtonsRender: !config.buttonsTemplate ? null : () => config.buttonsTemplate
+      onButtonsRender: !config.buttonsTemplate ? null : () => config.buttonsTemplate,
+      onEndPointRender: !config.endPointTemplate ? null : () => config.endPointTemplate,
     };
   }
 

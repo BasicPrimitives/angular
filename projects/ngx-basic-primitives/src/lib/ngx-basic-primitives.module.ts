@@ -12,6 +12,7 @@ import { GroupTitleComponent } from './diagrams/components/group-title.component
 import { DotHighlightComponent } from './diagrams/components/dot-highlight.component';
 import { LevelBackgroundComponent } from './diagrams/components/level-background.component';
 import { LevelTitleComponent } from './diagrams/components/level-title.component';
+import { EndPointComponent } from './diagrams/components/end-point.component';
 
 
 
@@ -28,6 +29,7 @@ import { LevelTitleComponent } from './diagrams/components/level-title.component
     DotHighlightComponent,
     CheckboxComponent,
     GroupTitleComponent,
+    EndPointComponent,
     LevelBackgroundComponent,
     LevelTitleComponent
   ],

@@ -115,6 +115,12 @@ export class OrgDiagramComponent extends BaseDiagramComponent implements OrgConf
   @Input() levelTitleFontStyle: string = "normal";
   @Input() levelTitleTemplate: TemplateRef<any> | null = null;
   @Input() levelBackgroundTemplate: TemplateRef<any> | null = null;
+  @Input() endPointTemplate: TemplateRef<any> | null = null;
+  @Input() showEndPoints: Enabled = Enabled.False;
+  @Input() endPointSize: Size = new Size(8, 8);
+  @Input() endPointCornerRadius: number = 4;
+  @Input() endPointFillColor: string = "#000080";
+  @Input() endPointOpacity: number = 0.5;
   @Input() distance: number = 3;
   @Input() scale: number = 1;
   @Input() minimumScale: number = 0.5;
