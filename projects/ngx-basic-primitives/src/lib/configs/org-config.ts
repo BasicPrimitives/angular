@@ -103,6 +103,12 @@ export class OrgConfig {
   levelTitleFontStyle: string = "normal";
   levelTitleTemplate: TemplateRef<any> | null = null;
   levelBackgroundTemplate: TemplateRef<any> | null = null;
+  endPointTemplate: TemplateRef<any> | null = null;
+  showEndPoints: Enabled = Enabled.False;
+  endPointSize: Size = new Size(8, 8);
+  endPointCornerRadius: number = 4;
+  endPointFillColor: string = "#000080";
+  endPointOpacity: number = 0.5;
   distance: number = 3;
   scale: number = 1;
   minimumScale: number = 0.5;

@@ -1,5 +1,6 @@
 import { ConnectorLabelPlacementType, ConnectorPlacementType, 
-  ConnectorShapeType, ZOrderType, AnnotationType, LineType } from '../enums';
+  ConnectorShapeType, ZOrderType, AnnotationType, LineType,
+  Enabled} from '../enums';
 import { Size, Thickness } from '../structs';
 
 
@@ -18,6 +19,9 @@ export class ConnectorAnnotationConfig {
   selectItems: Boolean = true;
   label:string | null = null;
   size: Size = new Size(60, 30);
+  showFromEndpoint: Enabled = Enabled.Auto;
+  showToEndpoint: Enabled = Enabled.Auto;
+  context: any = null
 
   constructor(config: Partial<ConnectorAnnotationConfig> = {}) {
     Object.assign(this, config);
